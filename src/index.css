@@ -2,6 +2,226 @@
 @tailwind components;
 @tailwind utilities;
 
-.shadow{
-   filter: drop-shadow(0px 0 1rem black);
+.shadow-states{
+   animation: move-shadow linear 3.2s infinite;
+}
+
+.shadow-states #flame-flue{
+   animation-delay: 900ms;
+}
+
+.shadow-l{
+   
+   filter: drop-shadow(calc(-1.5rem + var(--move-shadow-x)) 0 .5rem rgba(0,0,0,0.8));
+}
+.shadow-r{
+   filter: drop-shadow(calc(1.5rem + var(--move-shadow-x)) 0 .5rem rgba(0,0,0,0.8));
+}
+/* .shadow-t{
+   filter: drop-shadow(0 -1rem 1rem rgba(0,0,0,0.6));
+} */
+.shadow-b{
+   filter: drop-shadow(0 0.5rem 2rem rgba(0,0,0,0.9));
+}
+
+.shadow-wreath{
+   filter: drop-shadow(0 -1rem 0.85rem rgba(0,0,0,0.7));
+}
+
+.bg-brickwall{
+   background: center / contain repeat url('img/brick-texture-fliped.svg');
+}
+
+.bg-stonewall {
+      background: center 15rem/15rem repeat url('img/stone-texture2.svg');
+}
+
+.bg-flame{
+   animation: flame-animation 0.4s step-end infinite;
+   /* background: center / contain repeat url('img/fire/flame1.svg'); */
+}
+
+
+@keyframes flame-animation {
+  0%,100% {
+     background: center / contain repeat url('img/fire/flame1.svg');
+  }
+  25% {
+    background: center / contain repeat url('img/fire/flame2.svg');
+  }
+  50% {
+   background: center / contain repeat url('img/fire/flame3.svg');
+  }
+  75% {
+   background: center / contain repeat url('img/fire/flame4.svg');
+  }
+}
+
+.fire{
+   /* background: radial-gradient(ellipse at 52% 115%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%); */
+   
+    animation: flame-areol-animation 1.6s linear infinite;
+}
+
+
+@keyframes flame-areol-animation {
+  0%,100% {
+   background: center / contain radial-gradient(ellipse at 52% 120%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+  12.5% {
+   background: center / contain radial-gradient(ellipse at 49% 100%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+  25%{
+   background: radial-gradient(ellipse at 50% 110%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+  37.5%{
+   background: radial-gradient(ellipse at 52% 115%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+ 50% {
+   background: center / contain radial-gradient(ellipse at 51% 100%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+  62.5% {
+   background: center / contain radial-gradient(ellipse at 50% 100%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+  70%{
+      background: center / contain radial-gradient(ellipse at 50% 140%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+  82.5%{
+background: center / contain radial-gradient(ellipse at 50% 120%, 
+               rgba(255,228,218,1) 0%, 
+               rgba(252,233,82,1) 35%, 
+               rgba(251,165,24,0.9) 65%, 
+               rgba(250,178,77,0.754) 83%, 
+               rgba(255,146,99,0.3) 90%,
+               rgba(255,146,99,0.3) 90%);
+  }
+}
+
+@keyframes move-shadow {
+  0%,100% {
+   --move-shadow-x: 0.1rem;
+  }
+  12.5% {
+   --move-shadow-x: 0.15rem;
+  }
+  25%{
+   --move-shadow-x: -0.1rem;
+  }
+  37.5%{
+   --move-shadow-x: -0.05rem;
+  }
+ 50% {
+   --move-shadow-x: 0rem;
+  }
+  62.5% {
+   --move-shadow-x: -0.1rem;
+  }
+  70%{
+   --move-shadow-x: 0.15rem;
+  }
+  82.5%{
+   --move-shadow-x: 0.2rem;
+  }
+}
+
+@keyframes move-flue-shadow {
+  0%,100% {
+   --move-flue-shadow-x: 0.1rem;
+  }
+  12.5% {
+   --move-flue-shadow-x: 0.15rem;
+  }
+  25%{
+   --move-flue-shadow-x: -0.1rem;
+  }
+  37.5%{
+   --move-flue-shadow-x: -0.05rem;
+  }
+ 50% {
+   --move-flue-shadow-x: 0rem;
+  }
+  62.5% {
+   --move-flue-shadow-x: -0.1rem;
+  }
+  70%{
+   --move-flue-shadow-x: 0.15rem;
+  }
+  82.5%{
+   --move-flue-shadow-x: 0.2rem;
+  }
+}
+
+
+#fireplace-flue::after{
+   content:'';
+   position:absolute;
+   z-index: -5;
+   width: 100%;
+   height: 100%;
+   right: 0;
+   top: 0;
+   background-color: rgba(0,0,0,1);
+   animation-delay: 2s;
+   animation: move-flue-shadow linear 3.2s 0.2s infinite;
+   filter: drop-shadow(calc(1rem + var(--move-flue-shadow-x)) 0 0.9rem rgba(0,0,0,0.7));
+}
+
+#fireplace-flue{
+   animation-delay: 2s;
+   animation: move-flue-shadow  linear 3.2s 0.2s infinite;
+   filter: drop-shadow(calc(-1.1rem + var(--move-flue-shadow-x)) 0 0.9rem rgba(0,0,0,0.7));
+}
+
+.fire-bg-filter{
+   filter: grayscale(92%) brightness(100%) saturate(350%) contrast(998%) hue-rotate(25deg);
+   -webkit-filter: grayscale(92%) brightness(100%) saturate(350%) contrast(998%) hue-rotate(25deg);
+   -moz-filter: grayscale(92%) brightness(100%) saturate(350%) contrast(998%) hue-rotate(25deg);
 }
