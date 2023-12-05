@@ -29,11 +29,11 @@ const Fireplace = () => {
           {/* <div className="absolute  w-full h-full -top-[10%] "></div> */}
           <div className="h-full shadow-r">
             <div className="h-full flex flex-col items-center shadow-t">
-              <div className='w-[18rem] border-2 border-stone-600 h-3 rounded-t-lg bg-stonewall-gray bg-cover'></div>
+              <div className='w-[18rem] border-2 border-[#211c0f] h-3 rounded-t-lg bg-stone-500 bg-cover'></div>
               <div className='w-[17rem] border-x-2 border-b-2 border-stone-600 h-2 rounded-b-md bg-stonewall-gray bg-center'></div>
-              <div className='w-64  border-x-2 border-stone-600 flex-grow flex justify-center items-end bg-stonewall backdrop-brightness-50  bg-cover bg-fixed after:bg-cover after:bg-fixed'>
-                <div className=' w-[78%] h-[87%] overflow-hidden rounded-t-md backdrop-brightness-50 '>
-                  <div className="absolute bottom-0 w-full h-full bg-brickwall bg-fixed bg-repeat bg-center  -z-10 fire-bg-filter rounded-t-lg"></div>
+              <div className='w-64  border-x-2 border-[#422507] flex-grow flex justify-center items-end bg-stonewall backdrop-brightness-50  bg-cover bg-fixed after:bg-cover after:bg-fixed bg-no-repeat'>
+                <div className=' w-[74%] h-[84%] overflow-hidden rounded-t-3xl backdrop-brightness-50 '>
+                  <div className="absolute bottom-0 w-full h-full bg-brickwall bg-fixed bg-repeat bg-center fire-bg-filter rounded-t-lg"></div>
                   <div className='w-full h-full fire relative rounded-lg'>
                     <div id='fireplace-wood' className=' absolute -bottom-10 left-1/2 -translate-x-1/2 w-52 h-52 z-10 bg-flame' ></div>
                     <div id='fireplace-wood' className=' absolute -bottom-7 left-1/2 -translate-x-1/2 w-fit h-fit z-[5]'>
@@ -44,7 +44,7 @@ const Fireplace = () => {
               </div>
               <div className="shadow-b flex flex-col items-center">
                 <div className='w-[17rem] border-x-2 border-t-2 border-stone-600 h-2 rounded-t-lg bg-stonewall-gray bg-center'></div>
-                <div className='w-[22rem] border-2 border-stone-600 h-3 rounded-t-md bg-stonewall-gray bg-cover'></div>
+                <div className='w-[22rem] border-2 border-[#211c0f] h-3 rounded-t-md bg-stone-500 bg-cover'></div>
               </div>
             </div>
           </div>
